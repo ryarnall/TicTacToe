@@ -1,0 +1,16 @@
+table {
+	border: 1px solid gray;
+	height: 200px;
+	width: 200px;
+}
+
+td {
+	width: 30%;
+	height: 30%;
+	border: 1px solid black;
+	text-align: center;
+}
+
+#restartButton {
+	margin-top: 20px;
+}
