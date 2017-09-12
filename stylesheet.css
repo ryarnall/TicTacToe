@@ -1,26 +1,55 @@
 table {
-	border: 1px solid gray;
-	height: 200px;
-	width: 200px;
-	float: left;
+	height: 400px;
+	width: 400px;
+	background-color: blue;
+	background: radial-gradient(#3749a3, #1f2a5c);
+	border-radius: 10px;
+	border-collapse: separate;
+	border-spacing: 0px;
+	margin: auto;
 }
 
 td {
 	width: 30%;
 	height: 30%;
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 	text-align: center;
+	font-size: 85px;
+	font-family: Helvetica, sans-serif;
+	font-weight: bold;
+	color: white;
+}
+
+#a2, #b2, #c2 {
+	border-left: 3px solid #475ec9;
+	border-right: 3px solid #475ec9;
+}
+
+#b1, #b2, #b3 {
+	border-top: 3px solid #475ec9;
+	border-bottom: 3px solid #475ec9;
+}
+
+.computerMarker {
+	text-shadow: 3px 3px 7px #29e4ff,
+								-3px -3px 7px #29e4ff,
+								3px -3px 7px #29e4ff,
+								-3px 3px 7px #29e4ff;
+}
+
+.playerMarker {
+	text-shadow: 3px 3px 7px #ff005a,
+								-3px -3px 7px #ff005a,
+								3px -3px 7px #ff005a,
+								-3px 3px 7px #ff005a;
 }
 
 p {
-	float: left;
-	border: 1px solid gray;
+/*	border: 1px solid gray;*/
 	height: 200px;
 	width: 100px;
-	margin-left: 20px;
-	padding: 5px;
 }
 
 #restartButton {
-	margin-left: 20px;
+	display: inline-block;
 }

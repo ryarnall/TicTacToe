@@ -83,6 +83,7 @@ function randomBox() {
 function playerTurn(eventData) {
 	var $clickedBox = $(eventData.target);
 	if ($clickedBox.text() == "") {
+		$clickedBox.addClass("playerMarker");
 		$clickedBox.text("X");
 		whoWon("human");
 	}
@@ -91,6 +92,7 @@ function playerTurn(eventData) {
 function computerTurn() {
 	var aBox = randomBox();
 	if (aBox.text() == "") {
+		aBox.addClass("computerMarker")
 		aBox.text("O");
 		whoWon("computer");
 	} else {
@@ -101,5 +103,6 @@ function computerTurn() {
 
 function restartGame() {
 	$("td").empty();
+	$("td").removeClass();
 	gameState(4);
 }
