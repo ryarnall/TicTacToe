@@ -1,8 +1,8 @@
-$("td").on("click", (playerTurn));
 $("#restartButton").click(restartGame);
 
 gameState(1);
 
+//takes in a number that tells if the game is on human turn, a tie, someone won, new game
 function gameState(state) {
 	var message = $("p");
 
@@ -28,6 +28,7 @@ function gameState(state) {
 	}
 }
 
+//checks if the gameboard is full of pieces or not
 function areBoxesFull(state) {
 	if ($("td:empty").length == 0) {
 		gameState(5);
@@ -36,6 +37,7 @@ function areBoxesFull(state) {
 	}
 }
 
+//checks if there are three in a row of the same letter
 function whoWon(player) {
 	var a1 = $("#a1").text();
 	var a2 = $("#a2").text();
@@ -78,12 +80,13 @@ function whoWon(player) {
 	}
 }
 
+//selects a random cell in the game board
 function randomBox() {
 	var random = Math.floor(Math.random()*$("td").length);
 	return $("td").eq(random);
 }
 
-
+//places an "X" in the user-clicked-cell (if its empty)
 function playerTurn(eventData) {
 	var $clickedBox = $(eventData.target);
 	if ($clickedBox.text() == "") {
@@ -93,6 +96,7 @@ function playerTurn(eventData) {
 	}
 }
 
+//using randomBox(), places an "O" in the given cell (if its empty)
 function computerTurn() {
 	var aBox = randomBox();
 	if (aBox.text() == "") {
@@ -104,7 +108,7 @@ function computerTurn() {
 	}
 }
 
-
+//clears the game board
 function restartGame() {
 	$("td").empty();
 	$("td").removeClass();
