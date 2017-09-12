@@ -1,4 +1,4 @@
-$("td").click(playerTurn);
+$("td").on("click", (playerTurn));
 $("#restartButton").click(restartGame);
 
 gameState(1);
@@ -8,19 +8,23 @@ function gameState(state) {
 
 	if (state == 1) {
 		message.text("Welcome! Place your marker to begin the game");
+		$("td").on("click", (playerTurn));
 	} else if (state == 2) {
 		message.text("Your turn")
 	} else if (state == 3) {
-		message.text("Comp turn");
 		computerTurn();
 	} else if (state == 4) {
 		message.text("New game! Place your marker");
+		$("td").on("click", (playerTurn));
 	} else if (state == 5) {
 		message.text("Its a draw");
+		$("td").off("click", (playerTurn));
 	} else if (state == 6) {
 		message.text("You won!!");
+		$("td").off("click", (playerTurn));
 	} else if (state == 7) {
 		message.text("The computer won");
+		$("td").off("click", (playerTurn));
 	}
 }
 

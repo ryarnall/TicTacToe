@@ -1,20 +1,25 @@
-table {
-	height: 400px;
+div {
 	width: 400px;
+	height: 400px;
+	margin: auto;
+	border: 1px solid red;
+}
+
+table {
+	height: 100%;
+	width: 100%;
 	background-color: blue;
 	background: radial-gradient(#3749a3, #1f2a5c);
 	border-radius: 10px;
 	border-collapse: separate;
 	border-spacing: 0px;
-	margin: auto;
 }
 
 td {
 	width: 30%;
 	height: 30%;
-	/*border: 1px solid black;*/
 	text-align: center;
-	font-size: 85px;
+	font-size: 95px;
 	font-family: Helvetica, sans-serif;
 	font-weight: bold;
 	color: white;
