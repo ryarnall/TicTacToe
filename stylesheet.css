@@ -1,26 +1,50 @@
-div {
-	width: 800px;
-	height: 400px;
-	margin: auto;
-	/*border: 1px solid black;*/
+html {
+	background: black;
 }
 
-table {
-	height: 400px;
-	width: 400px;
+#mainContainer {
+	width: 700px;
+	height: 420px;
 	margin: auto;
-	background-color: blue;
+	display: flex;
+	justify-content: space-around;
+	margin-top: 20px;
+}
+
+#leftColumn {
+	display: flex;
+	flex-direction: column;
+}
+
+#rightColumn {
+	display: flex;
+	flex-direction: column;
+}
+
+#game {
+	height: 420px;
+	width: 420px;
+	background-color: #1f2a5c;
 	background: radial-gradient(#3749a3, #1f2a5c);
 	border-radius: 10px;
-	border-collapse: separate;
-	border-spacing: 0px;
+	display: flex;
+	flex-direction: row;
 }
 
-td {
-	width: 30%;
-	height: 30%;
-	text-align: center;
-	font-size: 95px;
+.column {
+	width: 140px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.cell {
+	width: 100%;
+	height: 140px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 130px;
 	font-family: Helvetica, sans-serif;
 	font-weight: bold;
 	color: white;
@@ -37,27 +61,47 @@ td {
 }
 
 .computerMarker {
-	text-shadow: 3px 3px 7px #29e4ff,
-								-3px -3px 7px #29e4ff,
-								3px -3px 7px #29e4ff,
-								-3px 3px 7px #29e4ff;
+	text-shadow: 3px 3px 12px #29e4ff,
+								-3px -3px 12px #29e4ff,
+								3px -3px 12px #29e4ff,
+								-3px 3px 12px #29e4ff;
 }
 
 .playerMarker {
-	text-shadow: 3px 3px 7px #ff005a,
-								-3px -3px 7px #ff005a,
-								3px -3px 7px #ff005a,
-								-3px 3px 7px #ff005a;
+	text-shadow: 3px 3px 12px #ff005a,
+								-3px -3px 12px #ff005a,
+								3px -3px 12px #ff005a,
+								-3px 3px 12px #ff005a;
 }
 
 
 p {
 	height: 200px;
 	width: 100px;
+	margin-top: 50px;
+	color: #c5c4c4;
+	text-align: center;
+	font-size: 16px;
 }
 
-#restartButton {
-	width: 60px;
-	height: 30px;
-	float: right;
+button {
+	width: 80px;
+	height: 60px;
+	font-size: 16px;
+	color: #c5c4c4;
+	background: radial-gradient(#3749a3, #1f2a5c);
+	border-radius: 5px;
+	border: none;
+	outline: none;
+}
+
+button:hover {
+	box-shadow: 3px 3px 7px #3749a3,
+								-3px -3px 7px #3749a3,
+								3px -3px 7px #3749a3,
+								-3px 3px 7px #3749a3;
+}
+
+#restartButton {	
+	margin-top: 50px;
 }

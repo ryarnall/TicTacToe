@@ -7,30 +7,34 @@
 	</head>
 
 	<body>
-		<div>
-			<table>
-				<tr>
-					<td id="a1"></td>
-					<td id="a2"></td>
-					<td id="a3"></td>
-				</tr>
-				<tr>
-					<td id="b1"></td>
-					<td id="b2"></td>
-					<td id="b3"></td>
-				</tr>
-				<tr>
-					<td id="c1"></td>
-					<td id="c2"></td>
-					<td id="c3"></td>
-				</tr>
-			</table>
-			<button id="restartButton">Restart</button>
-			<p id="messageBox"></p>		
+		<div id="mainContainer">
+			<div id="leftColumn">
+				<p id="messageBox"></p>	
+			</div>
+
+			<div id="game">
+				<div class="column">
+					<div class="cell" id="a1"></div>
+					<div class="cell" id="b1"></div>
+					<div class="cell" id="c1"></div>
+				</div>
+				<div class="column">
+					<div class="cell" id="a2"></div>
+					<div class="cell" id="b2"></div>
+					<div class="cell" id="c2"></div>
+				</div>
+				<div class="column">
+					<div class="cell" id="a3"></div>
+					<div class="cell" id="b3"></div>
+					<div class="cell" id="c3"></div>
+				</div>
+			</div>
+
+			<div id="rightColumn">
+				<button id="restartButton">Reset Board</button>
+				<!-- <button id="restartButton">Reset Score</button> -->
+			</div>
 		</div>
-
-
-			
 
 		
 		<script src="jquery-3.2.1.min.js"></script>	

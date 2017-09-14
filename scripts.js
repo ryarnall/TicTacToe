@@ -8,29 +8,29 @@ function gameState(state) {
 
 	if (state == 1) {
 		message.text("Welcome! Place your marker to begin the game");
-		$("td").on("click", (playerTurn));
+		$(".cell").on("click", (playerTurn));
 	} else if (state == 2) {
-		message.text("Your turn")
+		message.text("")
 	} else if (state == 3) {
 		computerTurn();
 	} else if (state == 4) {
 		message.text("New game! Place your marker");
-		$("td").on("click", (playerTurn));
+		$(".cell").on("click", (playerTurn));
 	} else if (state == 5) {
 		message.text("Its a draw");
-		$("td").off("click", (playerTurn));
+		$(".cell").off("click", (playerTurn));
 	} else if (state == 6) {
 		message.text("You won!!");
-		$("td").off("click", (playerTurn));
+		$(".cell").off("click", (playerTurn));
 	} else if (state == 7) {
 		message.text("The computer won");
-		$("td").off("click", (playerTurn));
+		$(".cell").off("click", (playerTurn));
 	}
 }
 
 //checks if the gameboard is full of pieces or not
 function areBoxesFull(state) {
-	if ($("td:empty").length == 0) {
+	if ($(".cell:empty").length == 0) {
 		gameState(5);
 	} else {
 		gameState(state);
@@ -82,8 +82,8 @@ function whoWon(player) {
 
 //selects a random cell in the game board
 function randomBox() {
-	var random = Math.floor(Math.random()*$("td").length);
-	return $("td").eq(random);
+	var random = Math.floor(Math.random()*$(".cell").length);
+	return $(".cell").eq(random);
 }
 
 //places an "X" in the user-clicked-cell (if its empty)
@@ -110,7 +110,7 @@ function computerTurn() {
 
 //clears the game board
 function restartGame() {
-	$("td").empty();
-	$("td").removeClass();
+	$(".cell").empty();
+	$(".cell").removeClass("computerMarker playerMarker");
 	gameState(4);
 }
