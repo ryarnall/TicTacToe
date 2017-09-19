@@ -194,10 +194,86 @@ function computerSmart() {
 		gameState(7);
 
 	}	else {
+		canPlayerWin();
+	}
+}
+
+function canPlayerWin() {
+		var a1 = $("#a1").text();
+	var a2 = $("#a2").text();
+	var a3 = $("#a3").text();
+
+	var b1 = $("#b1").text();
+	var b2 = $("#b2").text();
+	var b3 = $("#b3").text();
+
+	var c1 = $("#c1").text();
+	var c2 = $("#c2").text();
+	var c3 = $("#c3").text();
+
+
+	if (a1 == "" && (
+				(b1 == "X" && b1 == c1) ||
+				(a2 == "X" && a2 == a3) ||
+				(b2 == "X" && b2 == c3))) {
+		$("#a1").text("O").addClass("computerMarker");
+		whoWon();
+
+	} else if (a2 == "" && (
+							(b2 == "X" && b2 == c2) ||
+							(a1 == "X" && a1 == a3))) {
+		$("#a2").text("O").addClass("computerMarker");
+		whoWon();
+
+	} else if (a3 == "" && (
+							(b3 == "X" && b3 == c3) ||
+							(a1 == "X" && a1 == a2) ||
+							(b2 == "X" && b2 == c1))) {
+		$("#a3").text("O").addClass("computerMarker");
+		whoWon();
+
+	} else if (b1 == "" && (
+							(a1 == "X" && a1 == c1) ||
+							(b2 == "X" && b2 == b3))) {
+		$("#b1").text("O").addClass("computerMarker");
+		whoWon();
+
+	} else if (b2 == "" && ( 
+							(a2 == "X" && a2 == c2) ||
+							(b1 == "X" && b1 == b3) ||
+							(a1 == "X" && a1 == c3) ||
+							(c1 == "X" && c1 == a3))) {
+		$("#b2").text("O").addClass("computerMarker");
+		whoWon();
+
+	} else if (b3 == "" && (
+							(a3 == "X" && a3 == c3) ||
+							(b1 == "X" && b1 == b2))) {
+		$("#b3").text("O").addClass("computerMarker");
+		whoWon();
+
+	} else if (c1 == "" && (
+							(a1 == "X" && a1 == b1) ||
+							(c2 == "X" && c2 == c3) ||
+							(b2 == "X" && b2 == a3))) {
+		$("#c1").text("O").addClass("computerMarker");
+		whoWon();
+
+	} else if (c2 == "" && (
+							(a2 == "X" && a2 == b2) ||
+							(c1 == "X" && c1 == c3))) {
+		$("#c2").text("O").addClass("computerMarker");
+		whoWon();
+
+	} else if (c3 == "" && (
+							(a3 == "X" && a3 == b3) ||
+							(c1 == "X" && c1 == c2))) {
+		$("#c3").text("O").addClass("computerMarker");
+		whoWon();
+
+	}	else {
 		computerRandom();
 	}
-
-
 }
 
 //clears the game board
