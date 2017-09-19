@@ -16,11 +16,14 @@ html {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+	align-items: center;
 }
 
 #rightColumn {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
 }
 
 #game {
@@ -120,7 +123,31 @@ button:hover {
 								-3px 3px 7px #3749a3;
 }
 
+#charChoice {
+	color: #c5c4c4;
+	font-size: 16px;
+	margin-top: 25px;
+	text-align: center;
+}
 
-#resetBoardButton {	
-	margin-top: 50px;
+.charButtons {
+	font-weight: normal;
+	font-family: Helvetica, sans-serif;
+	font-weight: bold;
+	color: white;
+	font-size: 40px;
+}
+
+#xButton {
+	text-shadow: 3px 3px 12px #ff005a,
+								-3px -3px 12px #ff005a,
+								3px -3px 12px #ff005a,
+								-3px 3px 12px #ff005a;
+}
+
+#oButton {
+	text-shadow: 3px 3px 12px #29e4ff,
+								-3px -3px 12px #29e4ff,
+								3px -3px 12px #29e4ff,
+								-3px 3px 12px #29e4ff;
 }
