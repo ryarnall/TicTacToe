@@ -1,10 +1,17 @@
-$("#restartButton").click(restartGame);
+$("#resetBoardButton").click(resetBoard);
+
 
 gameState(1);
 
+var playerScore = 0;
+var computerScore = 0;
+$("#playerScore").text("Player: 0");
+$("#computerScore").text("Computer: 0");
+
+
 //takes in a number that tells if the game is on human turn, a tie, someone won, new game
 function gameState(state) {
-	var message = $("p");
+	var message = $("#messageBox");
 
 	if (state == 1) {
 		message.text("Welcome! Place your marker to begin the game");
@@ -20,9 +27,13 @@ function gameState(state) {
 		message.text("Its a draw");
 		$(".cell").off("click", (playerTurn));
 	} else if (state == 6) {
+		playerScore += 1;
+		$("#playerScore").text("Player:  " + playerScore);
 		message.text("You won!!");
 		$(".cell").off("click", (playerTurn));
 	} else if (state == 7) {
+		computerScore += 1;
+		$("#computerScore").text("Computer:  " + computerScore);
 		message.text("The computer won");
 		$(".cell").off("click", (playerTurn));
 	}
@@ -277,7 +288,7 @@ function canPlayerWin() {
 }
 
 //clears the game board
-function restartGame() {
+function resetBoard() {
 	$(".cell").empty();
 	$(".cell").removeClass("computerMarker playerMarker");
 	gameState(4);
