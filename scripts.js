@@ -98,14 +98,14 @@ function playerTurn(eventData) {
 
 
 function computerTurn() {
-	var chance = Math.floor(Math.random()*4);
+	// var chance = Math.floor(Math.random()*4);
 
-	if (chance == 0) {	
-		computerRandom();
-	} else {
-		computerSmart();
-	}
-
+	// if (chance == 0) {	
+	// 	computerRandom();
+	// } else {
+	// 	computerSmart();
+	// }
+	computerSmart();
 
 }
 
@@ -155,14 +155,14 @@ function computerSmart() {
 		gameState(7);
 
 	} else if (b1 == "" && (
-							(a1 == "O" && b1 == c1) ||
+							(a1 == "O" && a1 == c1) ||
 							(b2 == "O" && b2 == b3))) {
 		$("#b1").text("O").addClass("computerMarker");
 		gameState(7);
 
 	} else if (b2 == "" && ( 
 							(a2 == "O" && a2 == c2) ||
-							(b1 == "O" && b1 == a3) ||
+							(b1 == "O" && b1 == b3) ||
 							(a1 == "O" && a1 == c3) ||
 							(c1 == "O" && c1 == a3))) {
 		$("#b2").text("O").addClass("computerMarker");
