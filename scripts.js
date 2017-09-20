@@ -8,6 +8,8 @@ gameState(1);
 
 var playerChar = "X";
 var computerChar = "O";
+var playerShadow = "xShadow";
+var computerShadow = "oShadow";
 
 var playerScore = 0;
 var computerScore = 0;
@@ -107,7 +109,7 @@ function randomBox() {
 function playerTurn(eventData) {
 	var $clickedBox = $(eventData.target);
 	if ($clickedBox.text() == "") {
-		$clickedBox.addClass("playerMarker");
+		$clickedBox.addClass(playerShadow);
 		$clickedBox.text(playerChar);
 		whoWon("human");
 	}
@@ -130,7 +132,7 @@ function computerTurn() {
 function computerRandom() {
 	var aBox = randomBox();
 	if (aBox.text() == "") {
-		aBox.addClass("computerMarker").text(computerChar);
+		aBox.addClass(computerShadow).text(computerChar);
 		whoWon("computer");
 	} else {
 		computerRandom();
@@ -155,26 +157,26 @@ function computerSmart() {
 				(b1 == computerChar && b1 == c1) ||
 				(a2 == computerChar && a2 == a3) ||
 				(b2 == computerChar && b2 == c3))) {
-		$("#a1").text(computerChar).addClass("computerMarker");
+		$("#a1").text(computerChar).addClass(computerShadow);
 		gameState(7);
 
 	} else if (a2 == "" && (
 							(b2 == computerChar && b2 == c2) ||
 							(a1 == computerChar && a1 == a3))) {
-		$("#a2").text(computerChar).addClass("computerMarker");
+		$("#a2").text(computerChar).addClass(computerShadow);
 		gameState(7);
 
 	} else if (a3 == "" && (
 							(b3 == computerChar && b3 == c3) ||
 							(a1 == computerChar && a1 == a2) ||
 							(b2 == computerChar && b2 == c1))) {
-		$("#a3").text(computerChar).addClass("computerMarker");
+		$("#a3").text(computerChar).addClass(computerShadow);
 		gameState(7);
 
 	} else if (b1 == "" && (
 							(a1 == computerChar && a1 == c1) ||
 							(b2 == computerChar && b2 == b3))) {
-		$("#b1").text(computerChar).addClass("computerMarker");
+		$("#b1").text(computerChar).addClass(computerShadow);
 		gameState(7);
 
 	} else if (b2 == "" && ( 
@@ -182,32 +184,32 @@ function computerSmart() {
 							(b1 == computerChar && b1 == b3) ||
 							(a1 == computerChar && a1 == c3) ||
 							(c1 == computerChar && c1 == a3))) {
-		$("#b2").text(computerChar).addClass("computerMarker");
+		$("#b2").text(computerChar).addClass(computerShadow);
 		gameState(7);
 
 	} else if (b3 == "" && (
 							(a3 == computerChar && a3 == c3) ||
 							(b1 == computerChar && b1 == b2))) {
-		$("#b3").text(computerChar).addClass("computerMarker");
+		$("#b3").text(computerChar).addClass(computerShadow);
 		gameState(7);
 
 	} else if (c1 == "" && (
 							(a1 == computerChar && a1 == b1) ||
 							(c2 == computerChar && c2 == c3) ||
 							(b2 == computerChar && b2 == a3))) {
-		$("#c1").text(computerChar).addClass("computerMarker");
+		$("#c1").text(computerChar).addClass(computerShadow);
 		gameState(7);
 
 	} else if (c2 == "" && (
 							(a2 == computerChar && a2 == b2) ||
 							(c1 == computerChar && c1 == c3))) {
-		$("#c2").text(computerChar).addClass("computerMarker");
+		$("#c2").text(computerChar).addClass(computerShadow);
 		gameState(7);
 
 	} else if (c3 == "" && (
 							(a3 == computerChar && a3 == b3) ||
 							(c1 == computerChar && c1 == c2))) {
-		$("#c3").text(computerChar).addClass("computerMarker");
+		$("#c3").text(computerChar).addClass(computerShadow);
 		gameState(7);
 
 	}	else {
@@ -233,26 +235,26 @@ function canPlayerWin() {
 				(b1 == playerChar && b1 == c1) ||
 				(a2 == playerChar && a2 == a3) ||
 				(b2 == playerChar && b2 == c3))) {
-		$("#a1").text(computerChar).addClass("computerMarker");
+		$("#a1").text(computerChar).addClass(computerShadow);
 		whoWon();
 
 	} else if (a2 == "" && (
 							(b2 == playerChar && b2 == c2) ||
 							(a1 == playerChar && a1 == a3))) {
-		$("#a2").text(computerChar).addClass("computerMarker");
+		$("#a2").text(computerChar).addClass(computerShadow);
 		whoWon();
 
 	} else if (a3 == "" && (
 							(b3 == playerChar && b3 == c3) ||
 							(a1 == playerChar && a1 == a2) ||
 							(b2 == playerChar && b2 == c1))) {
-		$("#a3").text(computerChar).addClass("computerMarker");
+		$("#a3").text(computerChar).addClass(computerShadow);
 		whoWon();
 
 	} else if (b1 == "" && (
 							(a1 == playerChar && a1 == c1) ||
 							(b2 == playerChar && b2 == b3))) {
-		$("#b1").text(computerChar).addClass("computerMarker");
+		$("#b1").text(computerChar).addClass(computerShadow);
 		whoWon();
 
 	} else if (b2 == "" && ( 
@@ -260,32 +262,32 @@ function canPlayerWin() {
 							(b1 == playerChar && b1 == b3) ||
 							(a1 == playerChar && a1 == c3) ||
 							(c1 == playerChar && c1 == a3))) {
-		$("#b2").text(computerChar).addClass("computerMarker");
+		$("#b2").text(computerChar).addClass(computerShadow);
 		whoWon();
 
 	} else if (b3 == "" && (
 							(a3 == playerChar && a3 == c3) ||
 							(b1 == playerChar && b1 == b2))) {
-		$("#b3").text(computerChar).addClass("computerMarker");
+		$("#b3").text(computerChar).addClass(computerShadow);
 		whoWon();
 
 	} else if (c1 == "" && (
 							(a1 == playerChar && a1 == b1) ||
 							(c2 == playerChar && c2 == c3) ||
 							(b2 == playerChar && b2 == a3))) {
-		$("#c1").text(computerChar).addClass("computerMarker");
+		$("#c1").text(computerChar).addClass(computerShadow);
 		whoWon();
 
 	} else if (c2 == "" && (
 							(a2 == playerChar && a2 == b2) ||
 							(c1 == playerChar && c1 == c3))) {
-		$("#c2").text(computerChar).addClass("computerMarker");
+		$("#c2").text(computerChar).addClass(computerShadow);
 		whoWon();
 
 	} else if (c3 == "" && (
 							(a3 == playerChar && a3 == b3) ||
 							(c1 == playerChar && c1 == c2))) {
-		$("#c3").text(computerChar).addClass("computerMarker");
+		$("#c3").text(computerChar).addClass(computerShadow);
 		whoWon();
 
 	}	else {
@@ -296,7 +298,7 @@ function canPlayerWin() {
 //clears the game board
 function resetBoard() {
 	$(".cell").empty();
-	$(".cell").removeClass("computerMarker playerMarker");
+	$(".cell").removeClass("oShadow xShadow");
 	gameState(4);
 }
 
@@ -308,14 +310,22 @@ function resetScore() {
 }
 
 function playerCharX() {
+	$("#oButton").removeClass("oButtonActive");
+	$("#xButton").addClass("xButtonActive");
 	playerChar = "X";
 	computerChar = "O";
+	playerShadow = "xShadow";
+	computerShadow = "oShadow";
 	resetBoard();
 }
 
 function playerCharO() {
+	$("#xButton").removeClass("xButtonActive");
+	$("#oButton").addClass("oButtonActive");
 	playerChar = "O";
 	computerChar = "X";
+	playerShadow = "oShadow";
+	computerShadow = "xShadow";
 	resetBoard();
 }
 

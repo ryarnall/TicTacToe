@@ -9,7 +9,6 @@ html {
 	display: flex;
 	justify-content: space-around;
 	margin-top: 20px;
-	/*border: 1px solid white;*/
 }
 
 #leftColumn {
@@ -65,14 +64,14 @@ html {
 	border-bottom: 3px solid #475ec9;
 }
 
-.computerMarker {
+.oShadow {
 	text-shadow: 3px 3px 12px #29e4ff,
 								-3px -3px 12px #29e4ff,
 								3px -3px 12px #29e4ff,
 								-3px 3px 12px #29e4ff;
 }
 
-.playerMarker {
+.xShadow {
 	text-shadow: 3px 3px 12px #ff005a,
 								-3px -3px 12px #ff005a,
 								3px -3px 12px #ff005a,
@@ -138,14 +137,16 @@ button:hover {
 	font-size: 40px;
 }
 
-#xButton {
+
+
+.xButtonActive {
 	text-shadow: 3px 3px 12px #ff005a,
 								-3px -3px 12px #ff005a,
 								3px -3px 12px #ff005a,
 								-3px 3px 12px #ff005a;
 }
 
-#oButton {
+.oButtonActive {
 	text-shadow: 3px 3px 12px #29e4ff,
 								-3px -3px 12px #29e4ff,
 								3px -3px 12px #29e4ff,
